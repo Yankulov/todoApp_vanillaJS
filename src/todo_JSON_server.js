@@ -49,8 +49,6 @@ const addTodo = function() {
 	// note, that localStorage.setItem() expects the second argument to be string
 	// localStorage.setItem('todos',JSON.stringify(todos));
 
-
-
 	// render todos:
 	renderTodos();
 
@@ -63,24 +61,29 @@ const addTodo = function() {
 const removeTodo = function (e) {
 	// get id of todo to be removed:
 	let todoID;
-	if(e.target.classList.contains('fa-trash-alt')){
-		todoID = +e.target.parentNode.parentNode.dataset.id;
-	}else if( e.target.classList.contains('removeTodo')){
+	if (e.target.classList.contains('fa-trash-alt')) {
+		todoID =+e.target.parentNode.parentNode.dataset.id;
+	} else if ( e.target.classList.contains('removeTodo')) {
 		// if icon is streatched to div.removeTodo => this is not needed
 		todoID = +e.target.parentNode.dataset.id;
-	}else{
+	} else {
 		return;
 	}
-
+	
 	// get the index of todo to be removed from todos array:
 	let idx = todos.findIndex(todo => todo.id === todoID);
-
+	
 	// remove from todos array the element with index idx:
-	idx>=0 && todos.splice(idx,1);
+	idx >= 0 && todos.splice(idx,1);
+	
+	fetch(`${apiUrl}/todos/${todoID}`, {
+		method: 'DELETE',
+		
+	})
 
 	// save to local storage
 	// note, that localStorage.setItem() expects the second argument to be string
-	localStorage.setItem('todos',JSON.stringify(todos));
+	// localStorage.setItem('todos',JSON.stringify(todos));
 
 	// render todos:
 	renderTodos();
