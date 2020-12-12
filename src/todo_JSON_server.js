@@ -82,7 +82,6 @@ const removeTodo = function (e) {
 	})
 
 	// save to local storage
-	// note, that localStorage.setItem() expects the second argument to be string
 	// localStorage.setItem('todos',JSON.stringify(todos));
 
 	// render todos:
