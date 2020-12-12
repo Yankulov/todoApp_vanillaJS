@@ -1,6 +1,3 @@
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// define variables and functions
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 const displayTodoItemsCount = function() {
 	let count = todos.length || 0;
@@ -38,7 +35,7 @@ const addTodo = function() {
 	};
 
 	// add new todo object to the end of todos array:
-	// todos = [...todos, newTodo];
+	todos = [...todos, newTodo];
 
 	fetch(`${apiUrl}/todos`, {
 		method: 'POST',
