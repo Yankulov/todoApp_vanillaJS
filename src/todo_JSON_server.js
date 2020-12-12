@@ -10,8 +10,7 @@ const renderTodos = function(e) {
 	// add todo item at the end
 	todos.forEach( todo => {
 		nodes.todoListUL.innerHTML += `
-		<li data-id=${todo.id}>
-			<span class="todoID">${todo.id}.</span>
+		<li>
 			<span class="${todo.completed?'completed':''}">${todo.title}</span>
 			<div class="removeTodo"><i class="far fa-trash-alt"></i></div>
 		</li>
@@ -24,7 +23,6 @@ const renderTodos = function(e) {
 const addTodo = function() {
 	// get the input text:
 	const todoText = nodes.addTodoInput.value;
-
 	// make the ID - this should be done by the server:
 	// const id = todos.length ? todos[todos.length-1].id + 1 : 1;
 
@@ -49,8 +47,6 @@ const addTodo = function() {
 	// save to local storage
 	// note, that localStorage.setItem() expects the second argument to be string
 	// localStorage.setItem('todos',JSON.stringify(todos));
-
-
 
 	// render todos:
 	renderTodos();
