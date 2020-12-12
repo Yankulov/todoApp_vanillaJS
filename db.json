@@ -1,34 +1,5 @@
 {
   "todos": [
-    {
-      "id": 1,
-      "title": "first",
-      "completed": false
-    },
-    {
-      "title": "da",
-      "completed": false,
-      "id": 2
-    },
-    {
-      "title": "da2",
-      "completed": false,
-      "id": 3
-    },
-    {
-      "title": "onotheOne",
-      "completed": false,
-      "id": 4
-    },
-    {
-      "title": "newOnether",
-      "completed": false,
-      "id": 5
-    },
-    {
-      "title": "newOne",
-      "completed": false,
-      "id": 6
-    }
+    
   ]
 }
